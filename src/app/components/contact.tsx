@@ -241,8 +241,8 @@ const Contact = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      value: "akassahun2025@gmail.com",
-      href: "mailto:akassahun2025@gmail.com",
+      value: "akassahun2023@gmail.com",
+      href: "mailto:akassahun2023@gmail.com",
     },
     {
       icon: <Phone className="w-6 h-6" />,
@@ -253,7 +253,7 @@ const Contact = () => {
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Location",
-      value: "Ethiopia",
+      value: "Addis Ababa, Ethiopia",
       href: "https://maps.google.com/?q=Ethiopia",
     },
   ]
@@ -268,17 +268,16 @@ const Contact = () => {
             Get In{" "}
             <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Touch</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">Let's discuss your next project or just say hello</p>
+          {/* <p className="text-xl text-gray-400 max-w-3xl mx-auto">Let's discuss your next project or just say hello</p> */}
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-semibold text-white mb-6">Let's Connect</h3>
+              <h3 className="text-2xl font-semibold text-white mb-6">Ready to Collaborate</h3>
               <p className="text-gray-400 text-lg leading-relaxed mb-8">
-                I'm always interested in hearing about new opportunities and exciting projects. Whether you have a
-                question or just want to say hi, I'll try my best to get back to you within 24 hours!
+                I'm actively seeking new opportunities to contribute my skills to innovative projects and dynamic teams. Whether you're looking for a dedicated developer, have an exciting project in mind, or want to discuss potential collaboration, I'd love to hear from you., I'll try my best to get back to you within 24 hours!
               </p>
             </div>
 

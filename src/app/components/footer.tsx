@@ -108,7 +108,7 @@ const Footer = () => {
             <div className="space-y-2 text-sm text-gray-400">
               <p>akassahun2023@gmail.com</p>
               <p>+251 962 808 100</p>
-              <p>Ethiopia</p>
+              <p>Addis Ababa, Ethiopia</p>
             </div>
           </div>
         </div>
