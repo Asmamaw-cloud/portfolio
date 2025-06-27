@@ -121,7 +121,7 @@ const Footer = () => {
             </p>
             <p className="text-gray-400 text-sm flex items-center">
               Made with <Heart className="w-4 h-4 mx-1 text-red-500" /> using
-              Next.js & Tailwind CSS
+              Next.js, TypeScript & Tailwind CSS
             </p>
           </div>
         </div>
