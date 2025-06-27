@@ -277,7 +277,7 @@ const Contact = () => {
             <div>
               <h3 className="text-2xl font-semibold text-white mb-6">Ready to Collaborate</h3>
               <p className="text-gray-400 text-lg leading-relaxed mb-8">
-                I'm actively seeking new opportunities to contribute my skills to innovative projects and dynamic teams. Whether you're looking for a dedicated developer, have an exciting project in mind, or want to discuss potential collaboration, I'd love to hear from you., I'll try my best to get back to you within 24 hours!
+                I'm actively seeking new opportunities to contribute my skills to innovative projects and dynamic teams. Whether you're looking for a dedicated developer, have an exciting project in mind, or want to discuss potential collaboration, I'd love to hear from you.
               </p>
             </div>
 

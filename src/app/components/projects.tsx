@@ -153,6 +153,16 @@ const Projects = () => {
             </Card>
           ))}
         </div>
+         <div className="text-center mt-16">
+          <p className="text-gray-400 mb-6">Want to see more of my work or discuss a project?</p>
+          <Button
+            size="lg"
+            className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold px-8 py-3"
+            asChild
+          >
+            <a href="#contact">Get In Touch</a>
+          </Button>
+        </div>
       </div>
     </section>
   );
