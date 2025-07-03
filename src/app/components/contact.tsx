@@ -176,7 +176,7 @@ const Contact = () => {
                 <div>
                   <Textarea
                     name="message"
-                    placeholder="Tell me about your project, ask a question, or just say hello..."
+                    placeholder="Type your message..."
                     value={formData.message}
                     onChange={handleChange}
                     required
