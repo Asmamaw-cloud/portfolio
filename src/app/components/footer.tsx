@@ -41,6 +41,7 @@ const Footer = () => {
     "Backend Development",
     "Full-Stack Solutions",
     "Security Consulting",
+    "Network Engineer"
   ];
 
   return (
