@@ -1,13 +1,20 @@
 import { type NextRequest, NextResponse } from "next/server"
 import { Resend } from "resend"
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+const resendApiKey = process.env.RESEND_API_KEY
+const fromAddress = process.env.RESEND_FROM || "Contact Form <onboarding@resend.dev>"
+const toAddress = process.env.RESEND_TO || "akassahun2023@gmail.com"
+
+const resend = new Resend(resendApiKey)
 
 export async function POST(request: NextRequest) {
     try {
+        if (!resendApiKey) {
+            return NextResponse.json({ error: "Email service not configured" }, { status: 500 })
+        }
         const { name, email, message } = await request.json()
 
-        console.log("email: ", email, "  name: ", name, "   message: ", message)
+        // console.log("email: ", email, "  name: ", name, "   message: ", message)
 
         // Validate the data
         if (!name || !email || !message) {
@@ -22,8 +29,8 @@ export async function POST(request: NextRequest) {
 
         // Send email using Resend
         const { data, error } = await resend.emails.send({
-            from: "Contact Form <onboarding@resend.dev>", // This will be from your verified domain
-            to: ["akassahun2023@gmail.com"], // Your email
+            from: fromAddress,
+            to: [toAddress],
             subject: `New Contact Form Message from ${name}`,
             html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -70,7 +77,7 @@ Reply to: ${email}
 
         // Send auto-reply to the person who contacted you
         await resend.emails.send({
-            from: "Akassahun <onboarding@resend.dev>",
+            from: fromAddress,
             to: [email],
             subject: "Thanks for reaching out!",
             html: `

@@ -1,22 +1,25 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Inter, JetBrains_Mono } from "next/font/google"
 import "./globals.css"
 import Navigation from "@/app/components/navigation"
 import { Toaster } from "sonner"
+import { ThemeProvider } from "@/components/theme-provider"
+import GSAPProvider from "@/components/gsap-provider"
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
+const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" })
 
 export const metadata: Metadata = {
   title: "Asmamaw Kassahun - Full-Stack Developer",
   description:
-    "Computer Science graduated passionate about building secure, scalable web applications and exploring cybersecurity. Specializing in React, Node.js, and ethical hacking.",
-  keywords: "Full-Stack Developer, Ethical Hacker, React, Node.js, Next.js, Cybersecurity, Web Development",
+    "Computer Science graduate passionate about building modern, scalable web applications. Specializing in React, Next.js, Node.js, and TypeScript for exceptional user experiences.",
+  keywords: "Full-Stack Developer, React, Next.js, Node.js, TypeScript, Web Development, Frontend, Backend, Database Design",
   authors: [{ name: "Asmamaw Kassahun" }],
   openGraph: {
-    title: "Asmamaw Kassahun - Full-Stack Developer ",
+    title: "Asmamaw Kassahun - Full-Stack Developer",
     description:
-      "Computer Science graduated passionate about building secure, scalable web applications and exploring cybersecurity.",
+      "Computer Science graduate passionate about building modern, scalable web applications with React, Next.js, and Node.js.",
     type: "website",
   },
 }
@@ -27,11 +30,20 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={inter.className}>
-        <Toaster />
-        <Navigation />
-        {children}
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+      <body className={`${inter.variable} ${jetbrainsMono.variable} font-sans`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <GSAPProvider>
+            <Toaster />
+            <Navigation />
+            {children}
+          </GSAPProvider>
+        </ThemeProvider>
       </body>
     </html>
   )

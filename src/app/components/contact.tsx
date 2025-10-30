@@ -70,7 +70,7 @@ const Contact = () => {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
       value: "akassahun2023@gmail.com",
-      href: "mailto:akassahun2023@gmail.com",
+      href: "#contact",
     },
     {
       icon: <Phone className="w-6 h-6" />,
@@ -89,12 +89,12 @@ const Contact = () => {
   const isFormValid = formData.name.trim() && formData.email.trim() && formData.message.trim()
 
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-800/20">
+    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-slate-800/20">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Get In{" "}
-            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Touch</span>
+            <span className="bg-gradient-to-r from-cyan-600 via-emerald-500 to-cyan-600 bg-clip-text text-transparent">Touch</span>
           </h2>
           {/* <p className="text-xl text-gray-400 max-w-3xl mx-auto">Let's discuss your next project or just say hello</p> */}
         </div>
@@ -103,8 +103,8 @@ const Contact = () => {
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-semibold text-white mb-6">Ready to Collaborate</h3>
-              <p className="text-gray-400 text-lg leading-relaxed mb-8">
+              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">Ready to Collaborate</h3>
+              <p className="text-gray-700 dark:text-gray-400 text-lg leading-relaxed mb-8">
                 I'm actively seeking new opportunities to contribute my skills to innovative projects and dynamic teams. Whether you're looking for a dedicated developer, have an exciting project in mind, or want to discuss potential collaboration, I'd love to hear from you.
               </p>
             </div>
@@ -114,10 +114,10 @@ const Contact = () => {
                 <div key={index} className="flex items-center space-x-4">
                   <div className="p-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg">{info.icon}</div>
                   <div>
-                    <h4 className="text-white font-medium">{info.title}</h4>
+                    <h4 className="text-gray-900 dark:text-white font-medium">{info.title}</h4>
                     <a
                       href={info.href}
-                      className="text-gray-400 hover:text-purple-400 transition-colors duration-200"
+                      className="text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors duration-200"
                       target={info.href.startsWith("http") ? "_blank" : undefined}
                       rel={info.href.startsWith("http") ? "noopener noreferrer" : undefined}
                     >
@@ -141,9 +141,9 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <Card className="bg-slate-800/50 border-purple-500/20">
+          <Card className="bg-white dark:bg-slate-800/50 border-gray-200 dark:border-purple-500/20">
             <CardHeader>
-              <CardTitle className="text-2xl text-white">Send Message</CardTitle>
+              <CardTitle className="text-2xl text-gray-900 dark:text-white">Send Message</CardTitle>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -156,7 +156,7 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       disabled={isSubmitting}
-                      className="bg-slate-700 border-slate-600 text-white placeholder-gray-400 focus:border-purple-500 disabled:opacity-50"
+                      className="bg-white dark:bg-slate-700 border-gray-300 dark:border-slate-600 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:border-purple-500 disabled:opacity-50"
                     />
                   </div>
                   <div>
@@ -168,7 +168,7 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       disabled={isSubmitting}
-                      className="bg-slate-700 border-slate-600 text-white placeholder-gray-400 focus:border-purple-500 disabled:opacity-50"
+                      className="bg-white dark:bg-slate-700 border-gray-300 dark:border-slate-600 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:border-purple-500 disabled:opacity-50"
                     />
                   </div>
                 </div>
@@ -182,7 +182,7 @@ const Contact = () => {
                     required
                     rows={6}
                     disabled={isSubmitting}
-                    className="bg-slate-700 border-slate-600 text-white placeholder-gray-400 focus:border-purple-500 resize-none disabled:opacity-50"
+                    className="bg-white dark:bg-slate-700 border-gray-300 dark:border-slate-600 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:border-purple-500 resize-none disabled:opacity-50"
                   />
                 </div>
 
@@ -204,7 +204,7 @@ const Contact = () => {
                   )}
                 </Button>
 
-                <p className="text-xs text-gray-400 text-center">
+                <p className="text-xs text-gray-600 dark:text-gray-400 text-center">
                   By sending this message, you agree to be contacted via email.
                 </p>
               </form>
