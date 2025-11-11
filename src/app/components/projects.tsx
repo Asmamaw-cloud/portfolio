@@ -151,7 +151,54 @@ const Projects = () => {
                       >
                         <a
                           href={project.githubUrl}
-                          target="_blank"A modern company website built with Next.js, TypeScript, Tailwind CSS, and PostgreSQL. It showcases Bekur Technologies’ services, projects, and innovations with a responsive and visually appealing design.
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Github className="w-4 h-4 mr-2" />
+                          Code
+                        </a>
+                      </Button>
+                      {project.liveUrl !== "#" && (
+                        <Button
+                          size="sm"
+                          className="bg-gradient-to-r from-cyan-600 to-emerald-600 hover:from-cyan-700 hover:to-emerald-700"
+                          asChild
+                        >
+                          <a
+                            href={project.liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <ExternalLink className="w-4 h-4 mr-2" />
+                            Live Demo
+                          </a>
+                        </Button>
+                      )}
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
+
+        <motion.div
+          className="text-center mt-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <p className="text-gray-600 dark:text-gray-400 mb-6">Want to see more of my work or discuss a project?</p>
+          <Button
+            size="lg"
+            className="bg-gradient-to-r from-cyan-600 to-emerald-600 hover:from-cyan-700 hover:to-emerald-700 text-white font-semibold px-8 py-3"
+            asChild
+          >
+            <a href="#contact">Get In Touch</a>
+          </Button>
+        </motion.div>
+      </div>
     </section>
   )
 }
