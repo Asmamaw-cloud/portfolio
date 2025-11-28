@@ -131,11 +131,11 @@ const Hero = () => {
               className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight gsap-split-text"
               variants={itemVariants}
             >
-              <span className="bg-gradient-to-r from-blue-400 via-green-400 to-blue-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r mr-2 from-blue-400 via-green-400 to-blue-400 bg-clip-text text-transparent dark:text-gray-300">
                 Asmamaw
               </span>
               <br />
-              <span className="text-white">Kassahun</span>
+              <span className="bg-gradient-to-r from-blue-400 via-green-400 to-blue-400 bg-clip-text text-transparent dark:text-gray-300">Kassahun</span>
             </motion.h1>
 
             {/* Dynamic Skill */}
