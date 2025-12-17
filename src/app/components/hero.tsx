@@ -1,5 +1,4 @@
 "use client"
-
 import { useEffect, useState } from "react"
 import { motion } from "framer-motion"
 import { Github, Linkedin, Twitter, ArrowDown, Code, Sparkles } from "lucide-react"
@@ -10,10 +9,9 @@ import { SiUpwork } from "react-icons/si"
 const Hero = () => {
   const [mounted, setMounted] = useState(false)
   const [currentSkill, setCurrentSkill] = useState(0)
-
   const skills = [
     "React Developer",
-    "Next.js Expert", 
+    "Next.js Expert",
     "Full-Stack Engineer",
     "TypeScript Specialist",
     "UI/UX Enthusiast"
@@ -21,11 +19,9 @@ const Hero = () => {
 
   useEffect(() => {
     setMounted(true)
-    
     const interval = setInterval(() => {
       setCurrentSkill((prev) => (prev + 1) % skills.length)
     }, 3000)
-
     return () => clearInterval(interval)
   }, [])
 
@@ -60,7 +56,6 @@ const Hero = () => {
       <div className="absolute inset-0 -z-10">
         {/* Gradient Mesh */}
         <div className="absolute inset-0 bg-gradient-to-br from-gray-100 via-white to-gray-50 dark:from-slate-900 dark:via-slate-800 dark:to-black" />
-        
         {/* Floating Orbs */}
         <motion.div
           className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"
@@ -86,7 +81,6 @@ const Hero = () => {
             ease: "linear",
           }}
         />
-
         {/* Code Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="grid grid-cols-12 gap-4 h-full">
@@ -118,28 +112,22 @@ const Hero = () => {
         <div className="text-center lg:text-left space-y-8">
           <motion.div className="space-y-6" variants={itemVariants}>
             {/* Greeting */}
-            <motion.p 
+            <motion.p
               className="text-blue-400 font-medium text-lg flex items-center justify-center lg:justify-start gap-2"
               variants={itemVariants}
             >
               <Sparkles className="w-5 h-5" />
               Hello, I'm
             </motion.p>
-
             {/* Name */}
-            <motion.h1 
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white dark:text-gray-300 leading-tight gsap-split-text"
+            <motion.h1
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight gsap-split-text bg-gradient-to-r from-blue-400 via-green-400 to-blue-400 bg-clip-text text-transparent"
               variants={itemVariants}
             >
-              <span className="bg-gradient-to-r mr-2 from-blue-400 via-green-400 to-blue-400 bg-clip-text text-transparent dark:text-gray-300">
-                Asmamaw
-              </span>
-              {/* <br /> */}
-              <span className="bg-gradient-to-r from-blue-400 via-green-400 to-blue-400 bg-clip-text text-transparent dark:text-gray-300">Kassahun</span>
+              Asmamaw Kassahun
             </motion.h1>
-
             {/* Dynamic Skill */}
-            <motion.div 
+            <motion.div
               className="text-2xl sm:text-3xl text-gray-300 font-medium h-12 flex items-center justify-center lg:justify-start"
               variants={itemVariants}
             >
@@ -154,17 +142,15 @@ const Hero = () => {
                 {skills[currentSkill]}
               </motion.span>
             </motion.div>
-
             {/* Description */}
-            <motion.p 
+            <motion.p
               className="text-xl text-gray-400 max-w-2xl leading-relaxed"
               variants={itemVariants}
             >
-              I build digital experiences that matter. Creating modern web applications 
+              I build digital experiences that matter. Creating modern web applications
               with clean code, beautiful design, and exceptional user experiences.
             </motion.p>
           </motion.div>
-
           {/* CTA Buttons */}
           <motion.div
             className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
@@ -172,7 +158,7 @@ const Hero = () => {
           >
             <Button
               size="lg"
-              className="bg-gradient-to-r from-blue-500 to-green-500 hover:from-blue-600 hover:to-green-600 text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-500/25 cursor-pointer"
+              className="bg-gradient-to-r from-blue-500 to-green-500 hover:from-blue-600 hover:to-green-600 text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-500/25"
               onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
             >
               <Code className="w-5 h-5 mr-2" />
@@ -181,13 +167,12 @@ const Hero = () => {
             <Button
               size="lg"
               variant="outline"
-              className="border-blue-400/50 text-blue-400 hover:bg-blue-500 hover:text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 bg-transparent hover:border-blue-500 cursor-pointer"
+              className="border-blue-400/50 text-blue-400 hover:bg-blue-500 hover:text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 bg-transparent hover:border-blue-500"
               onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
             >
               Let's Talk
             </Button>
           </motion.div>
-
           {/* Social Links */}
           <motion.div
             className="flex justify-center lg:justify-start space-x-6"
@@ -213,7 +198,6 @@ const Hero = () => {
               </motion.a>
             ))}
           </motion.div>
-
           {/* Availability Status */}
           <motion.div
             className="flex justify-center lg:justify-start items-center space-x-2 text-sm text-gray-400"
@@ -223,7 +207,6 @@ const Hero = () => {
             <span>Available for new opportunities</span>
           </motion.div>
         </div>
-
         {/* Profile Image */}
         <motion.div
           className="flex justify-center lg:justify-end"
@@ -245,7 +228,6 @@ const Hero = () => {
                 />
               </div>
             </div>
-
             {/* Glow Effect */}
             <motion.div
               className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-green-500 opacity-20 blur-xl"
@@ -258,7 +240,6 @@ const Hero = () => {
                 repeat: Infinity,
               }}
             />
-
             {/* Floating Tech Icons */}
             <motion.div
               className="absolute -top-4 -right-4 bg-white/90 dark:bg-slate-800/80 backdrop-blur-sm rounded-full p-4 border border-blue-500/30"
@@ -272,7 +253,6 @@ const Hero = () => {
             >
               <Code className="w-6 h-6 text-blue-400" />
             </motion.div>
-            
             <motion.div
               className="absolute -bottom-4 -left-4 bg-white/90 dark:bg-slate-800/80 backdrop-blur-sm rounded-full p-4 border border-green-500/30"
               animate={{
@@ -289,7 +269,6 @@ const Hero = () => {
           </div>
         </motion.div>
       </motion.div>
-
       {/* Scroll Indicator */}
       <motion.div
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
