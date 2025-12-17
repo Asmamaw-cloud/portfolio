@@ -214,7 +214,7 @@ const About = () => {
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.2 }}
               >
-                <Card className="bg-white dark:bg-slate-800/50 border-gray-200 dark:border-slate-700 hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10 backdrop-blur-sm">
+                <Card className="bg-white h-[18rem] dark:bg-slate-800/50 border-gray-200 dark:border-slate-700 hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10 backdrop-blur-sm">
                   <CardContent className="p-6 text-center">
                     <motion.div
                       className="w-12 h-12 bg-gradient-to-r from-blue-500 to-green-500 rounded-full flex items-center justify-center text-white mx-auto mb-4 group-hover:from-blue-400 group-hover:to-green-400 transition-all duration-300"

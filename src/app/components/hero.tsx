@@ -128,13 +128,13 @@ const Hero = () => {
 
             {/* Name */}
             <motion.h1 
-              className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight gsap-split-text"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white dark:text-gray-300 leading-tight gsap-split-text"
               variants={itemVariants}
             >
               <span className="bg-gradient-to-r mr-2 from-blue-400 via-green-400 to-blue-400 bg-clip-text text-transparent dark:text-gray-300">
                 Asmamaw
               </span>
-              <br />
+              {/* <br /> */}
               <span className="bg-gradient-to-r from-blue-400 via-green-400 to-blue-400 bg-clip-text text-transparent dark:text-gray-300">Kassahun</span>
             </motion.h1>
 
@@ -172,7 +172,7 @@ const Hero = () => {
           >
             <Button
               size="lg"
-              className="bg-gradient-to-r from-blue-500 to-green-500 hover:from-blue-600 hover:to-green-600 text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-500/25"
+              className="bg-gradient-to-r from-blue-500 to-green-500 hover:from-blue-600 hover:to-green-600 text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-500/25 cursor-pointer"
               onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
             >
               <Code className="w-5 h-5 mr-2" />
@@ -181,7 +181,7 @@ const Hero = () => {
             <Button
               size="lg"
               variant="outline"
-              className="border-blue-400/50 text-blue-400 hover:bg-blue-500 hover:text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 bg-transparent hover:border-blue-500"
+              className="border-blue-400/50 text-blue-400 hover:bg-blue-500 hover:text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 bg-transparent hover:border-blue-500 cursor-pointer"
               onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
             >
               Let's Talk
@@ -204,12 +204,12 @@ const Hero = () => {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-white/10 hover:bg-blue-500/20 rounded-full transition-all duration-300 transform hover:scale-110 backdrop-blur-sm border border-white/20"
+                className="p-3 bg-white/10 hover:bg-blue-500/20 rounded-full transition-all duration-300 transform hover:scale-110 backdrop-blur-sm border dark:border-white/20 border-gray-900/20"
                 aria-label={social.label}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <social.Icon size={20} className="text-white" />
+                <social.Icon size={20} className="dark:text-white text-gray-900" />
               </motion.a>
             ))}
           </motion.div>
