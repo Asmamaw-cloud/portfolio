@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import { motion, AnimatePresence } from "framer-motion"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Github, ExternalLink } from "lucide-react"
-import Image from "next/image"
-import { staggerContainer, fadeInUp } from "@/lib/animations"
+import { motion, AnimatePresence } from "framer-motion";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Github, ExternalLink } from "lucide-react";
+import Image from "next/image";
+import { staggerContainer, fadeInUp } from "@/lib/animations";
 
 const Projects = () => {
   const projects = [
@@ -35,7 +35,13 @@ const Projects = () => {
       description:
         "A web-based hotel management system developed using Next.js, Nest.js, PostgreSQL, and Tailwind CSS. It supports room booking, customer management, reservation tracking, and admin controls through a user-friendly GUI.",
       image: "/vigorHMS.jpg",
-      technologies: ["TypeScript", "Next.js", "Nest.js", "PostgreSQL", "Tailwind CSS"],
+      technologies: [
+        "TypeScript",
+        "Next.js",
+        "Nest.js",
+        "PostgreSQL",
+        "Tailwind CSS",
+      ],
       githubUrl: "https://github.com/Asmamaw-cloud/hms-frontend",
       liveUrl: "https://hms.automataintelligence.ai/",
       featured: false,
@@ -45,7 +51,13 @@ const Projects = () => {
       description:
         "A mobile-based mental health support system built with Next.js, Nest.js, Flutter, PostgreSQL, and Tailwind CSS. It provides a safe and anonymous space for users to share their thoughts, receive emotional support, and connect with a community of peers.",
       image: "/mental bank.jpg",
-      technologies: ["TypeScript", "Next.js", "Nest.js", "PostgreSQL", "Tailwind CSS"],
+      technologies: [
+        "TypeScript",
+        "Next.js",
+        "Nest.js",
+        "PostgreSQL",
+        "Tailwind CSS",
+      ],
       githubUrl: "#",
       liveUrl: "https://github.com/Asmamaw-cloud/MentalBank-landing",
       featured: false,
@@ -60,10 +72,13 @@ const Projects = () => {
       liveUrl: "https://bekurtechnologies.com/",
       featured: false,
     },
-  ]
+  ];
 
   return (
-    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-slate-50 dark:from-slate-900 dark:to-slate-800">
+    <section
+      id="projects"
+      className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-slate-50 dark:from-slate-900 dark:to-slate-800"
+    >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <motion.h2
@@ -107,15 +122,22 @@ const Projects = () => {
               >
                 <Card className="bg-white/80 !pt-0 dark:bg-slate-800/50 border-gray-200 dark:border-slate-300 hover:border-cyan-500 dark:hover:border-cyan-500/40 transition-all duration-700 overflow-hidden h-full ">
                   <div className="group relative w-full h-[320px] rounded-2xl overflow-hidden">
-                    <Image
-                      src={project.image || "/placeholder.svg"}
-                      alt={project.title}
-                      width={400}
-                      height={0}
-                      className="w-full h-full object-cover rounded-2xl transform-gpu will-change-transform origin-center scale-100 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110 motion-reduce:transition-none motion-reduce:transform-none"                      />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <motion.div
+                      className="w-full h-full"
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ duration: 0.4, ease: "easeOut" }}
+                    >
+                      <img
+                        src={project.image || "/placeholder.svg"}
+                        alt={project.title}
+                        className="w-full h-full object-cover rounded-2xl"
+                      />
+                    </motion.div>
+
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+
                     {project.featured && (
-                      <Badge className="absolute top-4 left-4 bg-gradient-to-r from-cyan-600 to-emerald-600">
+                      <Badge className="absolute top-4 left-4 z-10 bg-gradient-to-r from-cyan-600 to-emerald-600 pointer-events-none">
                         Featured
                       </Badge>
                     )}
@@ -128,18 +150,22 @@ const Projects = () => {
                   </CardHeader>
 
                   <CardContent className="space-y-4">
-                    <p className="text-gray-600 dark:text-gray-400">{project.description}</p>
+                    <p className="text-gray-600 dark:text-gray-400">
+                      {project.description}
+                    </p>
 
                     <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech: string, techIndex: number) => (
-                        <Badge
-                          key={techIndex}
-                          variant="secondary"
-                          className="bg-cyan-50 dark:bg-cyan-950 text-cyan-700 dark:text-cyan-300 border-cyan-200 dark:border-cyan-800"
-                        >
-                          {tech}
-                        </Badge>
-                      ))}
+                      {project.technologies.map(
+                        (tech: string, techIndex: number) => (
+                          <Badge
+                            key={techIndex}
+                            variant="secondary"
+                            className="bg-cyan-50 dark:bg-cyan-950 text-cyan-700 dark:text-cyan-300 border-cyan-200 dark:border-cyan-800"
+                          >
+                            {tech}
+                          </Badge>
+                        )
+                      )}
                     </div>
 
                     <div className="flex space-x-4 pt-4">
@@ -189,7 +215,9 @@ const Projects = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <p className="text-gray-600 dark:text-gray-400 mb-6">Want to see more of my work or discuss a project?</p>
+          <p className="text-gray-600 dark:text-gray-400 mb-6">
+            Want to see more of my work or discuss a project?
+          </p>
           <Button
             size="lg"
             className="bg-gradient-to-r from-cyan-600 to-emerald-600 hover:from-cyan-700 hover:to-emerald-700 text-white font-semibold px-8 py-3"
@@ -200,7 +228,7 @@ const Projects = () => {
         </motion.div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Projects
+export default Projects;

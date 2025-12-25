@@ -116,7 +116,7 @@ const Hero = () => {
               className="text-blue-400 font-medium text-lg flex items-center justify-center lg:justify-start gap-2"
               variants={itemVariants}
             >
-              <Sparkles className="w-5 h-5" />
+              {/* <Sparkles className="w-5 h-5" /> */}
               Hello, I'm
             </motion.p>
             {/* Name */}
@@ -156,18 +156,23 @@ const Hero = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             variants={itemVariants}
           >
-            <Button
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Button
               size="lg"
-              className="bg-gradient-to-r from-blue-500 to-green-500 hover:from-blue-600 hover:to-green-600 text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-500/25"
+              className="bg-gradient-to-r from-blue-500 to-green-500 hover:from-blue-600 hover:to-green-600 text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-500/25 cursor-pointer"
               onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
             >
               <Code className="w-5 h-5 mr-2" />
               View My Work
             </Button>
+            </motion.div>
             <Button
               size="lg"
               variant="outline"
-              className="border-blue-400/50 text-blue-400 hover:bg-blue-500 hover:text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 bg-transparent hover:border-blue-500"
+              className="border-blue-400/50 dark:border-gray-600 cursor-pointer text-blue-400 hover:bg-blue-500 hover:text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 bg-transparent hover:border-blue-500"
               onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
             >
               Let's Talk

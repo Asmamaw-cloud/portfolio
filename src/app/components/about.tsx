@@ -138,7 +138,12 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <Button
+              <motion.div
+                className="flex items-center gap-3"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Button
                 size="lg"
                 className="bg-gradient-to-r from-blue-500 to-green-500 hover:from-blue-600 hover:to-green-600 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105"
                 asChild
@@ -148,11 +153,12 @@ const About = () => {
                   Download Resume
                 </a>
               </Button>
+              </motion.div>
 
               <Button
                 size="lg"
                 variant="outline"
-                className="border-blue-400/50 text-blue-400 hover:bg-blue-500 hover:text-white px-8 py-3 rounded-full transition-all duration-300 bg-transparent hover:border-blue-500"
+                className="border-blue-400/50 dark:border-gray-600 cursor-pointer text-blue-400 hover:bg-blue-500 hover:text-white px-8 py-3 rounded-full transition-all duration-300 bg-transparent hover:border-blue-500"
                 asChild
               >
                 <a href="#contact">Let's Connect</a>
